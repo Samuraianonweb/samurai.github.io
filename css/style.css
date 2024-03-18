@@ -194,7 +194,7 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
 
 /* Змінити колір випадаючих посилань при наведенні */
 .dropdown-content a:hover {
-	background-color: #000000 
+	background-color: #000000;
 	color:black;
 }
 
