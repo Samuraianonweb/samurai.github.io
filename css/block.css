@@ -5,7 +5,11 @@
 	width: auto;
 	height: 200px;
 	padding: 20px;
-  background-color: #003399;
+  background-color: #3B439E;
+  background-image: url("/img/hi.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .block2{
 	position: relative;
