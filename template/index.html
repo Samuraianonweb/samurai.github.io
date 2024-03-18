@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom </Styles>-->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/block.css">
+  <link rel="stylesheet" href="/css/test.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<ul class="navigation">
+	<li class="nav-item"><a href="index.html">Главная</a></li>
+	<li class="nav-item"><a href="#">Вынести вклад</a></li>
+	<li class="nav-item"><a href="/information/project.html">О проекте</a></li>
+	<li class="nav-item"><a href="#">Donate</a></li>
+	<li class="nav-item"><a href="#">Контакты</a></li>
+	  <div class="lang df">
+    <button value="en" class="active" id="lang-en">EN</button>
+    <button value="ru" id="lang-ru">RU</button>
+  </div>
+</ul>
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger"></label>
+
+<div class="site-wrap">
+  <!-- Project -->
+<div id="question-container">
+    <h2>Question:</h2>
+    <p id="question">What is the capital of France?</p>
+    <button id="option1" class="answer" >Paris</button>
+    <button id="option2" class="answer">London</button>
+    <button id="option3" class="answer">Berlin</button>
+    <button id="option4" class="answer">Madrid</button>
+  </div>
+  
+  </div>
+  <div id="snackbar">Не верно попробуй ещё раз</div>
+  <script src="/test/test.js"></script>
+  <script src="/js/language.js"></script>
+</body>
+</html>
