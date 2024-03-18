@@ -59,20 +59,81 @@
 - Как вы поживаете? - How are you?<br>
 - Хорошо, спасибо! А вы? - I'm good, thank you! And you?<br>
   </h3>
-  
-<div id="question-container">
-    <h2>Практика:</h2>
-    <p id="question">Good morning,My name is Anna?</p>
-    <button id="option1" class="answer" >Good morning,Anna</button>
-    <button id="option2" class="answer">Good afternoon,Anna</button>
-    <button id="option3" class="answer">Good evening,Anna</button>
-    <button id="option4" class="answer">Hi,Anna</button>
-  </div>
-  
-  </div>,
+  <h2>Практика:</h2>
+<div id="quiz-container"></div>
   <div id="snackbar">Не верно попробуй ещё раз</div>
   <div id="corect">Верно</div>
-  <script src="/test/test.js"></script>
-  <script src="/js/language.js"></script>
+  </div>
+  <!-- Вопросы и кнопки -->
+
+  <script>
+const questions = [
+  {
+    question: "What is the capital of France?",
+    options: ["Paris", "London", "Berlin", "Madrid"],
+    answer: "Paris"
+  },
+  {
+    question: "Which planet is known as the Red Planet?",
+    options: ["Earth", "Mars", "Jupiter", "Venus"],
+    answer: "Mars"
+  },
+  {
+    question: "Who wrote 'Romeo and Juliet'?",
+    options: ["William Shakespeare", "Charles Dickens", "Jane Austen", "Leo Tolstoy"],
+    answer: "William Shakespeare"
+  }
+];
+
+const quizContainer = document.getElementById('quiz-container');
+
+function displayQuestion(questionObj, index) {
+  const questionElement = document.createElement('div');
+  questionElement.innerHTML = `<br><p>${questionObj.question}</p>`;
+  questionObj.options.forEach((option, optionIndex) => {
+    const optionButton = document.createElement('button');
+    optionButton.textContent = option;
+    optionButton.className = 'answer'; // Добавляем класс CSS
+    optionButton.addEventListener('click', () => {
+      checkAnswer(questionObj, option, index);
+    });
+    questionElement.appendChild(optionButton);
+  });
+  quizContainer.appendChild(questionElement);
+}
+
+function checkAnswer(questionObj, userAnswer, questionIndex) {
+  const correctAnswer = questionObj.answer;
+  if (userAnswer === correctAnswer) {
+      // Get the snackbar DIV
+  var x = document.getElementById("corect");
+
+  // Add the "show" class to DIV
+  x.className = "show";
+
+  // After 3 seconds, remove the show class from DIV
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    
+  } else {
+      // Get the snackbar DIV
+  var x = document.getElementById("snackbar");
+
+  // Add the "show" class to DIV
+  x.className = "show";
+
+  // After 3 seconds, remove the show class from DIV
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+  }
+}
+
+function startQuiz() {
+  questions.forEach((question, index) => {
+    displayQuestion(question, index);
+  });
+  }
+
+startQuiz();
+  </script>
+  
 </body>
 </html>
