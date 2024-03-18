@@ -4,6 +4,7 @@ const correctAnswer = "Paris";
 function checkAnswer(answer) {
   if (answer === correctAnswer) {
     Correct();
+    //test
   } else {
   	NotCorrect();
   }
